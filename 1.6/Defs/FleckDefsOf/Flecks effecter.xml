@@ -1,0 +1,127 @@
+<Defs>
+  
+  
+<FleckDef ParentName="FleckBase_Thrown">
+	<defName>VPE_ShadowSwipeASTNL</defName>
+	<graphicData>
+		<texPath>UI_UmbraSTNL/Flecks/ShadowClawASTNL</texPath>
+		<renderInstanced>true</renderInstanced>
+		<color>(255, 255, 255, 255)</color>
+		<drawSize>(1,1)</drawSize>
+	</graphicData>
+	<altitudeLayer>Darkness</altitudeLayer>
+	<fadeInTime>0.1</fadeInTime>
+	<solidTime>0.1</solidTime>
+	<fadeOutTime>0.1</fadeOutTime>
+	<growthRate>0.5</growthRate>
+</FleckDef>
+
+<FleckDef ParentName="FleckBase_Thrown">
+	<defName>VPE_ShadowSwipeBSTNL</defName>
+	<graphicData>
+		<texPath>UI_UmbraSTNL/Flecks/ShadowClawBSTNL</texPath>
+		<renderInstanced>true</renderInstanced>
+		<color>(255, 255, 255, 255)</color>
+		<drawSize>(1,1)</drawSize>
+	</graphicData>
+	<altitudeLayer>Darkness</altitudeLayer>
+	<fadeInTime>0.1</fadeInTime>
+	<solidTime>0.1</solidTime>
+	<fadeOutTime>0.1</fadeOutTime>
+	<growthRate>0.5</growthRate>
+</FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown" MayRequire="Ludeon.Rimworld.Anomaly">
+    <defName>VPE_ShadowFang_BiteSTNL</defName>
+    <graphicData>
+      <texPath>Things/Mote/RageSpeedBit</texPath>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_Color2>(.55, 0, 0.55, 1)</_Color2>
+      </shaderParameters>
+	  <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <altitudeLayer>Darkness</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>.2</solidTime>
+    <fadeOutTime>.2</fadeOutTime>
+    <useAttachLink>true</useAttachLink>
+	<growthRate>-0.5</growthRate>
+  </FleckDef>
+  
+    <FleckDef ParentName="FleckBase_Thrown" MayRequire="Ludeon.Rimworld.Anomaly">
+    <defName>VPE_HuntingMarkSTNL</defName>
+    <graphicData>
+      <texPath>Things/Mote/RageSpeedBit</texPath>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_Color2>(.55, 0, 0.55, 1)</_Color2>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>.8</solidTime>
+    <fadeOutTime>.2</fadeOutTime>
+    <useAttachLink>true</useAttachLink>
+    <scalers>
+      <li>
+        <scaleTime>1.6</scaleTime>
+        <scaleAmt>1.1</scaleAmt>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.2481705)</li>
+            <li>(0.08,0.4560294)</li>
+            <li>(0.12,0.620567)</li>
+            <li>(0.16,0.7430447)</li>
+            <li>(0.2,0.8336748)</li>
+            <li>(0.24,0.8986948)</li>
+            <li>(0.28,0.9402529)</li>
+            <li>(0.32,0.9627749)</li>
+            <li>(0.36,0.9723766)</li>
+            <li>(0.3999999,0.9767269)</li>
+            <li>(0.4399999,0.9783706)</li>
+            <li>(0.4799999,0.978039)</li>
+            <li>(0.5199999,0.9772476)</li>
+            <li>(0.5599999,0.9762664)</li>
+            <li>(0.6,0.975273)</li>
+            <li>(0.64,0.974445)</li>
+            <li>(0.68,0.9739599)</li>
+            <li>(0.72,0.9739954)</li>
+            <li>(0.7600001,0.9734936)</li>
+            <li>(0.8000001,0.9718959)</li>
+            <li>(0.8400001,0.9508023)</li>
+            <li>(0.8800001,0.8760892)</li>
+            <li>(0.9200001,0.7138872)</li>
+            <li>(0.9600002,0.4319071)</li>
+            <li>(1,0)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+  </FleckDef>
+  
+    <EffecterDef MayRequire="Ludeon.Rimworld.Anomaly">
+    <defName>VPE_HuntingMarkSTNL</defName>
+    <offsetMode>Free</offsetMode> <!-- don't spawn attached, since the flecks already anchor themselves correctly, spawning attached can introduce bad offsets -->
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <scale>.5~.6</scale>
+        <ticksBetweenMotes>50</ticksBetweenMotes>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <positionRadius>0</positionRadius>
+        <fleckDef>VPE_HuntingMarkSTNL</fleckDef>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <absoluteAngle>True</absoluteAngle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <positionOffset>(0, 0, 1)</positionOffset>
+        <speed>0</speed>
+        <angle>0</angle>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>

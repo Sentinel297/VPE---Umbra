@@ -1,0 +1,44 @@
+<LanguageData>
+	<!-- =======Mod Settings======= -->
+	
+	<!-- Originium Spike -->
+	<OriginiumStabSTNL>Originium Stab</OriginiumStabSTNL>
+	<OriginiumStabBasicSTNL>Originium Spike Damage: {0}</OriginiumStabBasicSTNL>
+	<OriginiumStabBasicPenSTNL>Originium Spike Armor Penetration: {0}</OriginiumStabBasicPenSTNL>
+
+    <!-- Cataclysm -->
+	<OriginiumCataclysmSTNL>Cataclysm</OriginiumCataclysmSTNL>
+	<OriginiumStabCataclysmSTNL>Cataclysm Damage: {0}</OriginiumStabCataclysmSTNL>
+	<OriginiumStabCataclysmPenSTNL>Cataclysm Armor Penetration: {0}</OriginiumStabCataclysmPenSTNL>
+	
+	<!-- Pollution -->
+	<OriginiumPollutionSTNL>Originium Pollution</OriginiumPollutionSTNL>
+	<OriginiumPollutionDamageSTNL>Originium Pollution Damage: {0}</OriginiumPollutionDamageSTNL>
+	<OriginiumPollutionDamageIntervalSTNL>Damage Interval: {0} ticks (60 = 1 second)</OriginiumPollutionDamageIntervalSTNL>
+	<OriginiumPollutionThresholdSTNL>Toxic Environment Resistance Required To Not Take Damage: {0}%</OriginiumPollutionThresholdSTNL>
+	
+	<!-- Healing Arts -->
+	<ArtsRestorationSTNL>Arts: Restoration</ArtsRestorationSTNL>
+	<RegenSeveritySTNL>Level: {0}</RegenSeveritySTNL>
+	<HealingArtsTickIntervalSTNL>Restoration Interval: {0} ticks (60 Ticks = 1 second)</HealingArtsTickIntervalSTNL>
+	<HealingArtsScalingSTNL>Restoration Heal Per Level: {0} (Restoration Level = Caster's Medical Skill Rounded Down)</HealingArtsScalingSTNL>
+	<HealingArtsXPpercastSTNL>Restoration Medical XP Per Cast: {0} XP</HealingArtsXPpercastSTNL>
+	
+	<!-- Ward Arts -->
+	<ArtsWardSTNL>Arts: Ward</ArtsWardSTNL>
+	<ConversionRateSeverityWardSTNL>Psychic Sensitivity Required Per Deflection (Arts: Ward): {0}</ConversionRateSeverityWardSTNL>
+	<DeflectionsLeftSTNL>Deflection: {0}</DeflectionsLeftSTNL>
+	
+	<!-- Surge Arts And Effect -->
+	<ArtsSurgeSTNL>Arts: Surge</ArtsSurgeSTNL>
+	<SurgeSeveritySTNL>Surge Level {0}</SurgeSeveritySTNL>
+	<SurgeArtsScalingSensiSTNL>{0} Psychic Sensitivity = 1 Surge Level</SurgeArtsScalingSensiSTNL>
+	<SurgeSeverityBoostSTNL>Ranged/Melee Attack Speed Boost: {0}%</SurgeSeverityBoostSTNL>
+	<SurgeArtsBoostPerSeveritySTNL>Ranged/Melee Attack Speed Boost Per Surge Level: {0}</SurgeArtsBoostPerSeveritySTNL>
+	<OriginiumBuildupScalingSeveritySTNL>Originium Buildup Infection % Dealt To Enemies Per Surge Level: {0}</OriginiumBuildupScalingSeveritySTNL>
+	<BurstingSpikeDamageSTNL>Damage Dealt On 100% Buildup: {0}</BurstingSpikeDamageSTNL>
+	<BurstingSpikeArmorPenSTNL>Armor Penetration: {0}</BurstingSpikeArmorPenSTNL>
+	
+	<!-- Assimilation -->
+	<AssimilationSTNL>Psychic Sensitivity Bonus: {0}%</AssimilationSTNL>
+</LanguageData>

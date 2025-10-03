@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+		<defName>VPE_UmbraSTNL</defName>
+		<label>Umbra</label>
+		<description>Weave the shadows and overwhelm your foes with vicious psychic phenomena.</description>
+		<background>UI_UmbraSTNL/Tree/UmbraTreeBase</background>
+		<altBackground>UI_UmbraSTNL/Tree/UmbraTreeBase</altBackground>
+		<tab>Misc</tab>
+		<tooltip>Weave the shadows and overwhelm your foes with vicious psychic phenomena.</tooltip>
+	</VanillaPsycastsExpanded.PsycasterPathDef>
+</Defs>

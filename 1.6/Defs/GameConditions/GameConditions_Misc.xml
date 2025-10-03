@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GameConditionDef>
+	<defName>VPE_UmbralVeilSTNL</defName>
+	<conditionClass>VPE_Umbra.GameCondition_NoSolarFlare</conditionClass>
+	<label>Umbral Veil</label>
+	<description>An Umbra path user is blocking the sunlight.</description>
+	<letterDef>NegativeEvent</letterDef>
+	<canBePermanent>false</canBePermanent>
+	<!-- <weatherDef>UmbraDarknessSTNL</weatherDef> -->
+</GameConditionDef>
+
+
+  <GameConditionDef>
+	<defName>VPE_UmbraPsychicDarknessSTNL</defName>
+	<conditionClass>VPE_Umbra.GameCondition_UmbraPsychicDarkness</conditionClass>
+	<label>Umbral Swarm</label>
+	<description>An Umbra path user is blocking the sunlight. Horrors from the night will hunt foes in the darkness.</description>
+	<letterDef>NegativeEvent</letterDef>
+	<canBePermanent>false</canBePermanent>
+	<weatherDef>UmbraDarknessSTNL</weatherDef>
+</GameConditionDef>
+  
+  <WeatherDef>
+    <defName>UmbraDarknessSTNL</defName>
+    <label>Localized darkness</label>
+    <description>Light is being blocked by a psychic phenomenon.</description>
+    <temperatureRange>-1000~9999</temperatureRange>
+    <snowRate>0</snowRate>
+    <windSpeedFactor>1</windSpeedFactor>
+    <windSpeedOffset>1</windSpeedOffset>
+    <accuracyMultiplier>1</accuracyMultiplier>
+    <favorability>Neutral</favorability>
+    <perceivePriority>1</perceivePriority>
+    <rainRate>0</rainRate>
+    <moveSpeedMultiplier>1</moveSpeedMultiplier>
+    <preventsShuttleLaunch MayRequire="Ludeon.Rimworld.Odyssey">false</preventsShuttleLaunch>
+    <commonalityRainfallFactor>
+      <points>
+        <li>(0, 0)</li>
+        <li>(300,0)</li>
+        <li>(1300, 0)</li>
+      </points>
+    </commonalityRainfallFactor>
+    <ambientSounds>
+      <li>Ambient_UnnaturalDarkness_Phase2</li>
+    </ambientSounds>
+    <overlayClasses>
+      <li>WeatherOverlay_DeathpallFog</li>
+    </overlayClasses>
+    <!-- Colors are Overcast -->
+    <skyColorsDay>
+      <sky>(0.2,0.2,0.2)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(1,1,1)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(0.2,0.2,0.2)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(1,1,1)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.15,0.15,0.15)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(1,1,1)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.1,0.1,0.1)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(1,1,1)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsNightMid>
+  </WeatherDef>
+
+</Defs>

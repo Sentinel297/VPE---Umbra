@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ShadowStrikeSTNL</defName>
+	<label>Shadow Claw</label>
+	<description>Strike the target with a claw made of psychic energy, targets in the dark will receive an additional hit.\n\n(100% Psychic Sensitivity = 10 Damage || Targets must be in a cell with less than/equal to 30% light to take a second hit.)\n\n(Darklight is considered as darkness for this ability.)</description>
+	<iconPath>UI_UmbraSTNL/Abilities/ShadowClaw</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Pawn</targetMode>
+	<!-- <chance>0</chance> -->
+	<range>18.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Umbra.Ability_ShadowStrike</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_UmbraSTNL</path>
+			<level>1</level>
+			<order>1</order>
+			<psyfocusCost>0.03</psyfocusCost>
+			<entropyGain>10</entropyGain>
+		</li>
+		<!-- <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget"> -->
+		<!-- <effecterDef>RaisedRock_Collapse</effecterDef> -->
+		<!-- <maintainForTicks>1</maintainForTicks> -->
+		<!-- <scale>1</scale> -->
+		<!-- </li> -->
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 2 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_UmbralCurseSTNL</defName>
+	<label>Curse</label>
+	<description>Sap the energy from the target by cursing them with a looming psychic phenomenon that feeds on their life force.\n\nSubsequent casts will further decrease the maximum capacity for the target's stats up to a maximum of 30%.\n\nCasting this ability on a target that is standing in a location with a light level of 30% or less will instantly afflict them with the full effect of Curse.\n\n(Darklight is considered as darkness for this ability.)</description>
+	<iconPath>UI_UmbraSTNL/Abilities/Curse</iconPath>
+	<castTime>45</castTime>
+	<targetMode>Pawn</targetMode>
+	<durationTime>5000</durationTime>
+	<durationTimeStatFactors>
+		<PsychicSensitivity>1</PsychicSensitivity>
+	</durationTimeStatFactors>
+	<!-- <chance>0</chance> -->
+	<range>21.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>-10</goodwillImpact>
+	<abilityClass>VPE_Umbra.Ability_Curse</abilityClass>
+	<castSound>VPE_WordOfFear_Cast</castSound>
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_UmbraSTNL</path>
+			<level>2</level>
+			<order>2</order>
+			<psyfocusCost>0.05</psyfocusCost>
+			<entropyGain>15</entropyGain>
+			<prerequisites>
+				<li>VPE_ShadowStrikeSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+  
+  <!-- Level 3 -->  
+  
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ConcealSkipSTNL</defName>
+	<label>Conceal Skip</label>
+	<description>Turn yourself into a shadow and emerge at the target location, nearby allies will become shrouded in darkness as the caster reforms, rendering them invisible.</description>
+	<iconPath>UI_UmbraSTNL/Abilities/ConcealingSkip</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Pawn</targetMode>
+	<chance>0</chance>
+	<range>25.9</range>
+	<radius>3.5</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Umbra.Ability_ConcealSkip</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_UmbraSTNL</path>
+			<level>2</level>
+			<order>1</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>25</entropyGain>
+			<prerequisites>
+			<li>VPE_UmbralCurseSTNL</li>
+			<li>VPE_ShadowCloneSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_MassUmbralCurseSTNL</defName>
+	<label>Mass Curse</label>
+	<description>Sap the energy from multiple targets by cursing them with a looming psychic phenomenon that feeds on their life force.\n\nSubsequent casts will further decrease the maximum capacity for the target's stats up to a maximum of 30%.\n\nCasting this ability on targets that are standing in a location with a light level of 30% or less will instantly afflict them with the full effect of Curse.\n\n(Darklight is considered as darkness for this ability.)</description>
+	<iconPath>UI_UmbraSTNL/Abilities/MassCurse</iconPath>
+	<castTime>90</castTime>
+	<targetMode>Location</targetMode>
+	<durationTime>5000</durationTime>
+	<durationTimeStatFactors>
+	<PsychicSensitivity>1</PsychicSensitivity>
+	</durationTimeStatFactors>
+	<!-- <chance>0</chance> -->
+	<range>18.9</range>
+	<radius>5</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>-20</goodwillImpact>
+	<abilityClass>VPE_Umbra.Ability_MassCurse</abilityClass>
+	<castSound>PsychicBanshee</castSound>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_UmbraSTNL</path>
+			<level>2</level>
+			<order>3</order>
+			<psyfocusCost>0.15</psyfocusCost>
+			<entropyGain>30</entropyGain>
+		    <prerequisites>
+			<li>VPE_UmbralCurseSTNL</li>
+			<li>VPE_ShadowHuntSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 3 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_HuntingMarkSTNL</defName>
+	<label>Hunting Mark</label>
+	<description>Inflict a psychic mark upon enemies to weaken them, greatly increasing incoming damage. The effectiveness of the mark depends on the light level at their position.\n\n(25% incoming damage bonus if standing in an area with more than 30% light, 100% incoming damage bonus if standing in an area with a light level of 30% or less.)\n\n(Darklight is considered as darkness for this ability.)</description>
+	<iconPath>UI_UmbraSTNL/Abilities/HuntingMark</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Location</targetMode>
+	<durationTime>5000</durationTime>
+	<durationTimeStatFactors>
+	<PsychicSensitivity>1</PsychicSensitivity>
+	</durationTimeStatFactors>
+	<!-- <chance>0</chance> -->
+	<range>18.9</range>
+	<radius>5.9</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>-20</goodwillImpact>
+	<abilityClass>VPE_Umbra.Ability_HuntingMark</abilityClass>
+	<castSound>PsycastPsychicEffect</castSound>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_UmbraSTNL</path>
+			<level>3</level>
+			<order>3</order>
+			<psyfocusCost>0.18</psyfocusCost>
+			<entropyGain>30</entropyGain>
+			<prerequisites>
+			<li>VPE_UmbralCurseSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+
+<!-- Level 4 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_UmbralVeilSTNL</defName>
+	<label>Umbral Veil</label>
+	<description>Generate a psychic field around the local area, this field will prevent sunlight from passing through. This veil is capable of preventing the electromagnetic radiation emanated by solar flares from affecting the protected area.</description>
+	<iconPath>UI_UmbraSTNL/Abilities/UmbralVeil</iconPath>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<goodwillImpact>0</goodwillImpact>
+	<showUndrafted>true</showUndrafted>
+	<targetMode>Self</targetMode>
+	<castTime>120</castTime>
+	<range>12.9</range>
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<castSound>VPE_Overshield_Cast</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_UmbraSTNL</path>
+			<level>4</level>
+			<order>1</order>
+			<psyfocusCost>0.4</psyfocusCost>
+			<entropyGain>35</entropyGain>
+			<prerequisites>
+			<li>VPE_HuntingMarkSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_GameCondition">
+			<gameCondition>VPE_UmbralVeilSTNL</gameCondition>
+			<durationDays>1</durationDays>
+			<sendLetter>false</sendLetter>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 5 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ShadowCloneSTNL</defName>
+	<label>Umbra</label>
+	<description>Weave a creature of shadows that will take the caster's appearance, this creature will mirror the caster's psychic prowess and possess the ability to develop its own set of psycasts.\n\nThis entity will steadily lose psyfocus over time, disappearing once it reaches 0%.\nThe entity will lose much more psyfocus over time if it is standing in an area with a light level over 30%.\n\n(Darklight is considered as darkness for this ability.)</description>
+	<iconPath>UI_UmbraSTNL/Abilities/Umbra</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Location</targetMode>
+	<!-- <durationTimeStatFactors> -->
+		<!-- <PsychicSensitivity>1</PsychicSensitivity> -->
+	<!-- </durationTimeStatFactors> -->
+	<chance>0</chance>
+	<range>18.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>-20</goodwillImpact>
+	<abilityClass>VPE_Umbra.Ability_ShadowClone</abilityClass>
+	<castSound>VPE_EyeBlast_Cast</castSound>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_UmbraSTNL</path>
+			<level>5</level>
+			<order>1</order>
+			<psyfocusCost>0.45</psyfocusCost>
+			<entropyGain>35</entropyGain>
+			<prerequisites>
+			<li>VPE_ShadowFangSTNL</li>
+			<li>VPE_UmbraPsychicDarknessSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ShadowFangSTNL</defName>
+	<label>Shadow Fang</label>
+	<description>Bite down on the target with fangs made of psychic energy, these fangs will continuously bite on them for as long as they remain in an area with less than 30% light.\n\n(Damage scales with the psychic sensitivity of the target, 100% = 10 damage. 0% = 1 Damage.)\n\nThe initial bite scales with the caster's sensitivity (100% = 15 Damage)\n\n(Darklight is considered as darkness for this ability.)</description>
+	<iconPath>UI_UmbraSTNL/Abilities/ShadowFang</iconPath>
+	<castTime>60</castTime>
+	<targetMode>Pawn</targetMode>
+	<durationTimeStatFactors>
+		<PsychicSensitivity>1</PsychicSensitivity>
+	</durationTimeStatFactors>
+	<!-- <chance>0</chance> -->
+	<range>18.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>-20</goodwillImpact>
+	<abilityClass>VPE_Umbra.Ability_ShadowFang</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_UmbraSTNL</path>
+			<level>5</level>
+			<order>2</order>
+			<psyfocusCost>0.15</psyfocusCost>
+			<entropyGain>20</entropyGain>
+			<prerequisites>
+			<li>VPE_UmbralVeilSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ShadowHuntSTNL</defName>
+	<label>Shadow Hunt</label>
+	<description>Assault targets in the radius with fangs made of psychic energy, these fangs will continuously bite on them for as long as they remain in an area with less than 30% light.\n\n(Damage scales with the psychic sensitivity of the target, 100% = 10 damage. 0% = 1 Damage.)\n\nThe initial bite scales with the caster's sensitivity (100% = 10 Damage)\n\n(Darklight is considered as darkness for this ability.)</description>
+	<iconPath>UI_UmbraSTNL/Abilities/ShadowHunt</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Location</targetMode>
+	<durationTimeStatFactors>
+		<PsychicSensitivity>1</PsychicSensitivity>
+	</durationTimeStatFactors>
+	<!-- <chance>0</chance> -->
+	<range>18.9</range>
+	<radius>5</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>-20</goodwillImpact>
+	<abilityClass>VPE_Umbra.Ability_ShadowHunt</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_UmbraSTNL</path>
+			<level>5</level>
+			<order>3</order>
+			<psyfocusCost>0.25</psyfocusCost>
+			<entropyGain>60</entropyGain>
+			<prerequisites>
+			<li>VPE_ShadowFangSTNL</li>
+			<li>VPE_UmbraPsychicDarknessSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 6 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_UmbraPsychicDarknessSTNL</defName>
+	<label>Umbral Swarm</label>
+	<description>Shroud the area under a psychic field capable of blocking sunlight to awaken shadowy creatures that will assault those who are not of the caster's faction.\n\n(These entities will only be able to reach targets that are in a location with a light level of 30% or less.)\n\n(Darklight is considered as darkness for this ability.)</description>
+	<iconPath>UI_UmbraSTNL/Abilities/PsychicDarkness</iconPath>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<goodwillImpact>0</goodwillImpact>
+	<showUndrafted>true</showUndrafted>
+	<targetMode>Self</targetMode>
+	<castTime>180</castTime>
+	<range>12.9</range>
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<castSound>Psycast_Neuroquake_Effect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_UmbraSTNL</path>
+			<level>6</level>
+			<order>1</order>
+			<psyfocusCost>0.70</psyfocusCost>
+			<entropyGain>50</entropyGain>
+			<prerequisites>
+			<li>VPE_ShadowFangSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_GameCondition">
+			<gameCondition>VPE_UmbraPsychicDarknessSTNL</gameCondition>
+			<durationDays>1</durationDays>
+			<sendLetter>false</sendLetter>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 7 To finish someday-->
+
+<!-- <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase"> -->
+	<!-- <defName>VPE_UmbralFormSTNL</defName> -->
+	<!-- <label>Umbral Form</label> -->
+	<!-- <description>Strike the target with a claw made of psychic energy, targets in the dark will receive an additional hit.\n\n(100% Psychic Sensitivity = 10 Damage || Targets must be in a cell with less than/equal to 30% light to take a second hit.)\n\n(Darklight is considered as darkness for this ability.)</description> -->
+	<!-- <iconPath>UI_UmbraSTNL/Abilities/ShadowClaw</iconPath> -->
+	<!-- <castTime>30</castTime> -->
+	<!-- <targetMode>Self</targetMode> -->
+	<!-- <chance>0</chance> -->
+	<!-- <range>18.9</range> -->
+	<!-- <needsTicking>true</needsTicking> -->
+	<!-- <goodwillImpact>0</goodwillImpact> -->
+	<!-- <abilityClass>VPE_Umbra.Ability_UmbralForm</abilityClass> -->
+	<!-- <castSound>PsycastPsychicPulse</castSound> -->
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<!-- <modExtensions> -->
+		<!-- <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast"> -->
+			<!-- <path>VPE_UmbraSTNL</path> -->
+			<!-- <level>7</level> -->
+			<!-- <order>1</order> -->
+			<!-- <psyfocusCost>0</psyfocusCost> -->
+			<!-- <entropyGain>0</entropyGain> -->
+		<!-- </li> -->
+		<!-- <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget"> -->
+		<!-- <effecterDef>RaisedRock_Collapse</effecterDef> -->
+		<!-- <maintainForTicks>1</maintainForTicks> -->
+		<!-- <scale>1</scale> -->
+		<!-- </li> -->
+	<!-- </modExtensions> -->
+<!-- </VEF.Abilities.AbilityDef> -->
+  
+</Defs>

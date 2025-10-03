@@ -1,0 +1,379 @@
+<Defs>
+
+<HediffDef>
+	<defName>VPE_UmbralCurseSTNL</defName>
+	<label>Curse</label>
+	<description>This creature's essence is being sapped by a looming psychic force, their stats are severely lowered.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>0.30</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(0.4, 0, 0.4)</defaultLabelColor>
+	<makesSickThought>True</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>true</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<stages>
+		<li>
+			<minSeverity>0.30</minSeverity>
+			<label>Weak</label>
+			<capMods>
+				<li>
+					<capacity>Consciousness</capacity>
+					<setMax>0.80</setMax>
+				</li>
+				<li>
+					<capacity>Moving</capacity>
+					<setMax>0.80</setMax>
+				</li>
+				<li>
+					<capacity>Sight</capacity>
+					<setMax>0.80</setMax>
+				</li>
+				<li>
+					<capacity>Breathing</capacity>
+					<setMax>0.80</setMax>
+				</li>
+				<li>
+					<capacity>Manipulation</capacity>
+					<setMax>0.80</setMax>
+				</li>
+				<li>
+					<capacity>BloodFiltration</capacity>
+					<setMax>0.80</setMax>
+				</li>
+				<li>
+					<capacity>Hearing</capacity>
+					<setMax>0.80</setMax>
+				</li>
+				<li>
+					<capacity>BloodPumping</capacity>
+					<setMax>0.80</setMax>
+				</li>
+			</capMods>
+			<statFactors>
+				<!-- <PsychicSensitivity>0.80</PsychicSensitivity> -->
+			</statFactors>
+		</li>
+		<li>
+			<minSeverity>0.60</minSeverity>
+			<label>Moderate</label>
+			<capMods>
+				<li>
+					<capacity>Consciousness</capacity>
+					<setMax>0.60</setMax>
+				</li>
+				<li>
+					<capacity>Moving</capacity>
+					<setMax>0.60</setMax>
+				</li>
+				<li>
+					<capacity>Sight</capacity>
+					<setMax>0.60</setMax>
+				</li>
+				<li>
+					<capacity>Breathing</capacity>
+					<setMax>0.60</setMax>
+				</li>
+				<li>
+					<capacity>Manipulation</capacity>
+					<setMax>0.60</setMax>
+				</li>
+				<li>
+					<capacity>BloodFiltration</capacity>
+					<setMax>0.60</setMax>
+				</li>
+				<li>
+					<capacity>Hearing</capacity>
+					<setMax>0.60</setMax>
+				</li>
+				<li>
+					<capacity>BloodPumping</capacity>
+					<setMax>0.60</setMax>
+				</li>
+			</capMods>
+			<statFactors>
+				<!-- <PsychicSensitivity>0.60</PsychicSensitivity> -->
+			</statFactors>
+		</li>
+		<li>
+			<minSeverity>0.90</minSeverity>
+			<label>Drained</label>
+			<capMods>
+				<li>
+					<capacity>Consciousness</capacity>
+					<setMax>0.30</setMax>
+				</li>
+				<li>
+					<capacity>Moving</capacity>
+					<setMax>0.30</setMax>
+				</li>
+				<li>
+					<capacity>Sight</capacity>
+					<setMax>0.30</setMax>
+				</li>
+				<li>
+					<capacity>Breathing</capacity>
+					<setMax>0.30</setMax>
+				</li>
+				<li>
+					<capacity>Manipulation</capacity>
+					<setMax>0.30</setMax>
+				</li>
+				<li>
+					<capacity>BloodFiltration</capacity>
+					<setMax>0.30</setMax>
+				</li>
+				<li>
+					<capacity>Hearing</capacity>
+					<setMax>0.30</setMax>
+				</li>
+				<li>
+					<capacity>BloodPumping</capacity>
+					<setMax>0.30</setMax>
+				</li>
+			</capMods>
+			<statFactors>
+				<!-- <PsychicSensitivity>0.30</PsychicSensitivity> -->
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>5000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		<li Class="HediffCompProperties_Effecter">
+			<stateEffecter>VPE_Liferot</stateEffecter>
+		</li>
+	</comps>
+</HediffDef>
+
+
+<HediffDef>
+	<defName>VPE_UmbralShroudSTNL</defName>
+	<label>Umbral Shroud</label>
+	<description>This person is surrounded by a light refracting field of darkness, effectively rendering them invisible.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(0.6, 0, 0.6)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="HediffCompProperties_Invisibility">
+			<visibleToPlayer>true</visibleToPlayer>
+		</li>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>5000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+</HediffDef>
+
+<HediffDef>
+	<defName>VPE_HuntingMarkSTNL</defName>
+	<label>Hunting Mark</label>
+	<description>A psychic mark is weakening this creature, stay in the light to dampen its effect.</description>
+	<hediffClass>VPE_Umbra.Hediff_MarkOftheHunt</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(0.6, 0, 0.6)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>True</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>12500</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_Effecter" MayRequire="Ludeon.Rimworld.Anomaly">
+			<stateEffecter>VPE_HuntingMarkSTNL</stateEffecter>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<stages>
+		<li>
+			<minSeverity>0.10</minSeverity>
+			<label>Weakened by light</label>
+			<statFactors>
+				<IncomingDamageFactor>1.25</IncomingDamageFactor>
+			</statFactors>
+		</li>
+		<li>
+			<minSeverity>1</minSeverity>
+			<statFactors>
+				<IncomingDamageFactor>2</IncomingDamageFactor>
+			</statFactors>
+		</li>
+	</stages>
+</HediffDef>
+
+
+<HediffDef>
+	<defName>VPE_ShadowFangSTNL</defName>
+	<label>Shadow Fang</label>
+	<description>This person is being bitten by fangs made of psychic energy, get to the nearest light source or die trying.</description>
+	<hediffClass>VPE_Umbra.Hediff_ShadowFang</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(0.6, 0, 0.6)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>True</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+</HediffDef>
+
+<HediffDef>
+	<defName>VPE_UmbraSTNL</defName>
+	<label>Umbra</label>
+	<description>A shadow taking the form of an Umbra path user, this entity is capable of learning its own set of psychic abilities and will do the same work as its summoner.\n\nThis entity will steadily consume psyfocus to maintain its form, disappearing once it reaches 0%.\n\nStaying in an area with a light level of more than 30% will cause this entity's psyfocus to drop much faster than normal.</description>
+	<hediffClass>VPE_Umbra.Umbra</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(0.7, 0, 0.7)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="HediffCompProperties_Invisibility">
+			<visibleToPlayer>true</visibleToPlayer>
+			<affectedByDisruptor>false</affectedByDisruptor>
+			<recoverFromDisruptedTicks>1</recoverFromDisruptedTicks>
+		</li>
+		<li Class="HediffCompProperties_Effecter" MayRequire="Ludeon.Rimworld.Anomaly">
+			<stateEffecter>BiomutationPulserWarmup</stateEffecter>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<stages>
+		<li>
+			<disablesNeeds>
+				<li>Mood</li>
+				<li>Food</li>
+				<li>Rest</li>
+			</disablesNeeds>
+			<painFactor>0</painFactor>
+			<totalBleedFactor>0</totalBleedFactor>
+			<opinionOfOthersFactor>0</opinionOfOthersFactor>
+			<statOffsets>
+				<VacuumResistance MayRequire="Ludeon.Rimworld.Odyssey">1</VacuumResistance>
+				<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+				<ComfyTemperatureMin>-999</ComfyTemperatureMin>
+				<ComfyTemperatureMax>999</ComfyTemperatureMax>
+			</statOffsets>
+		</li>
+	</stages>
+</HediffDef>
+
+<HediffDef>
+	<defName>VPE_UmbraPsychicDarknessExposureSTNL</defName>
+	<label>darkness exposure</label>
+	<description>This person is in the dark, shadowy creatures will attack them until they return to the light.</description>
+	<hediffClass>VPE_Umbra.Hediff_UmbraPsychicDarknessExposure</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(0.6, 0.6, 0.6)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>True</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<stages>
+		<li>
+			<becomeVisible>false</becomeVisible>
+		</li>
+	</stages>
+</HediffDef>
+
+
+<!-- To finish -->
+
+<HediffDef>
+	<defName>VPE_UmbralFormDaySTNL</defName>
+	<label>Umbral Crest</label>
+	<description>A shadow taking the form of an Umbra path user, this entity is capable of learning its own set of psychic abilities and will do the same work as its summoner.\n\nThis entity will steadily consume psyfocus to maintain its form, disappearing once it reaches 0%.\n\nStaying in an area with a light level of more than 30% will cause this entity's psyfocus to drop much faster than normal.</description>
+	<hediffClass>VPE_Umbra.Hediff_UmbralFormDay</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(0.7, 0, 0.7)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="HediffCompProperties_Effecter" MayRequire="Ludeon.Rimworld.Anomaly">
+			<stateEffecter>BiomutationPulserWarmup</stateEffecter>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<stages>
+		<li>
+			<painFactor>0</painFactor>
+			<totalBleedFactor>0</totalBleedFactor>
+            <statFactors>
+			<IncomingDamageFactor>0.50</IncomingDamageFactor>
+			</statFactors>
+		</li>
+	</stages>
+</HediffDef>
+
+<HediffDef>
+	<defName>VPE_UmbralFormNightSTNL</defName>
+	<label>Umbral Wings</label>
+	<description>A shadow taking the form of an Umbra path user, this entity is capable of learning its own set of psychic abilities and will do the same work as its summoner.\n\nThis entity will steadily consume psyfocus to maintain its form, disappearing once it reaches 0%.\n\nStaying in an area with a light level of more than 30% will cause this entity's psyfocus to drop much faster than normal.</description>
+	<hediffClass>VPE_Umbra.Hediff_UmbralFormNight</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(0.7, 0, 0.7)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="HediffCompProperties_Invisibility">
+			<visibleToPlayer>true</visibleToPlayer>
+		</li>
+		<li Class="HediffCompProperties_Effecter" MayRequire="Ludeon.Rimworld.Anomaly">
+			<stateEffecter>BiomutationPulserWarmup</stateEffecter>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<stages>
+		<li>
+			<painFactor>0</painFactor>
+			<totalBleedFactor>0</totalBleedFactor>
+			<regeneration>200</regeneration>
+			<capMods>
+				<li>
+					<capacity>Moving</capacity>
+					<postFactor>4</postFactor>
+				</li>
+			</capMods>
+		</li>
+	</stages>
+</HediffDef>
+</Defs>
